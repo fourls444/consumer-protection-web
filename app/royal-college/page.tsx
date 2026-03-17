@@ -1,6 +1,7 @@
 "use client";
 import CommitteeSection from "../committee/CommitteeSection";
 import EmblemSection from "../emblem/EmblemSection";
+import LocationSection from "../location/LocationSection";
 import { useState } from "react";
 import styles from "./royalcollege.module.css";
 export default function RoyalCollegePage() {
@@ -173,6 +174,10 @@ export default function RoyalCollegePage() {
 
                     {activeTab === 2 && (
                         <EmblemSection />
+                    )}
+
+                    {activeTab === 3 && (
+                        <LocationSection />
                     )}
 
                 </div>

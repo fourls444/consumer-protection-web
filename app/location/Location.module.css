@@ -1,0 +1,42 @@
+.section {
+    padding: 0;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* LEFT COLUMN */
+.leftColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.topImage {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* Removed unused .leftText styles */
+
+/* RIGHT COLUMN */
+.rightColumn {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rightImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+}

@@ -1,87 +1,43 @@
 .section {
     padding: 0;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 /* TOP AREA */
 .topContainer {
     display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-    align-items: stretch;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: center;
 }
 
 /* EMBLEMS */
 .emblemsWrapper {
-    flex: 1.2;
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
 }
 
 .emblemImage {
-    width: 45%;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
     object-fit: contain;
 }
 
-/* DESCRIPTION CARD */
-.descriptionCard {
-    flex: 1;
-    background: linear-gradient(135deg, #fdfdf9 0%, #efecd2 100%);
-    border-radius: 16px;
-    padding: 30px 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    position: relative;
-    border: 1px solid #e2ddc4;
-}
-
-.cardHeader {
+/* DESCRIPTION CARD (IMAGE) */
+.descriptionWrapper {
+    flex: 1.2;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-    position: relative;
 }
 
-.smallEmblem {
-    width: 65px;
+.descriptionImage {
+    width: 100%;
     height: auto;
-}
-
-.cardTitle h3 {
-    font-size: 16px;
-    color: #111;
-    margin: 0 0 5px 0;
-    font-weight: 800;
-}
-
-.cardTitle p {
-    font-size: 11px;
-    color: #555;
-    margin: 0;
-    font-weight: 600;
-}
-
-.quoteIcon {
-    position: absolute;
-    top: -20px;
-    right: 0;
-    font-size: 80px;
-    font-family: Georgia, serif;
-    color: rgba(122, 117, 54, 0.15);
-    line-height: 1;
-}
-
-.cardBody p {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.cardBody p strong {
-    font-weight: 700;
+    object-fit: contain;
 }
 
 /* GRID AREA */
@@ -92,29 +48,16 @@
 }
 
 .gridCard {
-    background: #f7f7f7;
-    border-radius: 12px;
-    padding: 25px;
-    min-height: 120px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
 }
 
 .wideCard {
     grid-column: span 2;
 }
 
-.gridCard h4 {
-    font-size: 15px;
-    color: #111;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.gridCard p {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.6;
-    margin: 0;
-    white-space: pre-line;
+.gridImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
