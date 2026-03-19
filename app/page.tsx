@@ -4,23 +4,19 @@ import { useState } from "react";
 import Banner from "@/components/ui/Banner";
 import IntroSection from "@/components/home/IntroSection";
 import Sidebar from "@/components/home/Sidebar";
-import HistoryContent from "@/components/history/HistoryContent";
-import VisionContent from "@/components/vision/VisionContent";
-import CurriculumContent from "@/components/curriculum/CurriculumContent";
-import ExpertiseContent from "@/components/expertise/ExpertiseContent";
-import CommitteeContent from "@/components/committee/CommitteeContent";
+import HistoryContent from "@/components/01_history/HistoryContent";
+import VisionContent from "@/components/02_vision/VisionContent";
+import CurriculumContent from "@/components/03_curriculum/CurriculumContent";
+import ExpertiseContent from "@/components/04_expertise/ExpertiseContent";
+import CommitteeContent from "@/components/05_committee/CommitteeContent";
 import HighlightSection from "@/components/home/HighlightSection";
 import EventSection from "@/components/home/EventSection";
 import NewsSection from "@/components/home/NewsSection";
-import LogoContent from "@/components/logo/LogoContent";
-import ContactContent from "@/components/contact/ContactContent";
+import LogoContent from "@/components/06_logo/LogoContent";
+import ContactContent from "@/components/07_contact/ContactContent";
 
 // Styling Imports
 import layoutStyles from "@/components/home/HomeLayout.module.css";
-import visionStyles from "@/components/vision/Vision.module.css";
-import curriculumStyles from "@/components/curriculum/Curriculum.module.css";
-import logoStyles from "@/components/logo/Logo.module.css";
-import contactStyles from "@/components/contact/Contact.module.css";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("history");
