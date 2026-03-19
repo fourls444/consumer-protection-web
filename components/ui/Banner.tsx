@@ -8,7 +8,7 @@ export default function Banner() {
       <div className={styles.content}>
         <img
           src="/images/icon.png"
-          alt="Pharmacy Council Logo"
+          alt="Logo"
           className={styles.logo}
         />
         <div className={styles.textGroup}>
