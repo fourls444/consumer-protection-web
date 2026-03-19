@@ -5,6 +5,8 @@ import Banner from "@/components/ui/Banner";
 import IntroSection from "@/components/home/IntroSection";
 import Sidebar from "@/components/home/Sidebar";
 import HistoryContent from "@/components/history/HistoryContent";
+import VisionContent from "@/components/vision/VisionContent";
+import CurriculumContent from "@/components/curriculum/CurriculumContent";
 import HighlightSection from "@/components/home/HighlightSection";
 import EventSection from "@/components/home/EventSection";
 import NewsSection from "@/components/home/NewsSection";
@@ -26,19 +28,9 @@ export default function Home() {
       case "history":
         return <HistoryContent />;
       case "vision":
-        return (
-          <>
-            <h1 className={visionStyles.contentTitle}>วิสัยทัศน์และพันธกิจ</h1>
-            <p className={visionStyles.description}>กำลังเตรียมข้อมูล...</p>
-          </>
-        );
+        return <VisionContent />;
       case "curriculum":
-        return (
-          <>
-            <h1 className={curriculumStyles.contentTitle}>ข้อมูลหลักสูตร</h1>
-            <p className={curriculumStyles.description}>กำลังเตรียมข้อมูล...</p>
-          </>
-        );
+        return <CurriculumContent />;
       case "expertise":
         return (
           <>

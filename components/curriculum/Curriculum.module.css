@@ -1,13 +1,395 @@
-.contentTitle {
+.curriculum {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.leftCol {
+    display: flex;
+}
+
+.mainCard {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cardHeader {
+    background: #848b4d;
+    /* Muted Olive Green */
+    padding: 1.5rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.iconCircle {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.headerTitle {
+    font-size: 1.35rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.headerSub {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.cardBody {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.mainDesc {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.tags {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #eff1e4;
+    /* Light Olive/Beige Background */
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: #4b5320;
+    /* Dark olive text */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: auto;
+}
+
+.downloadIcon {
+    width: 35px;
+    height: 35px;
+    background: #4a4d24;
+    /* Darker Olive */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.imageBox {
+    width: 100%;
+    height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    flex: 1;
+}
+
+.subCard {
+    padding: 1.25rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.green {
+    background: #848b4d;
+    /* Muted Olive Green */
+    color: white;
+}
+
+.white {
+    background: white;
+    color: #1e293b;
+    border: 1px solid #f1f5f9;
+}
+
+.subIcon {
+    font-size: 1.25rem;
+}
+
+.subTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.subDesc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Objectives Section */
+.objectives {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.objBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #eff1e4;
+    padding: 0.4rem 1.25rem;
+    border-radius: 50px;
+    color: #4b5320;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.objTitle {
     font-size: 1.85rem;
     font-weight: 700;
     color: #1e293b;
+    text-align: center;
+}
+
+.objSubtitle {
+    font-size: 0.95rem;
+    color: #64748b;
     margin-bottom: 1.5rem;
 }
 
-.description {
-    font-size: 1.05rem;
-    color: #475569;
-    line-height: 1.75;
-    margin-bottom: 3rem;
+.objGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.objCard {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f1f5f9;
+}
+
+.objIconBox {
+    min-width: 50px;
+    height: 50px;
+    background: #848b4d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.objInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.objCardTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.objCardDesc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .objGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Course Structure Section */
+.structSection {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.structGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.structGridRow2 {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 66%;
+    /* Roughly 2 out of 3 columns */
+}
+
+.structCard {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Slightly stronger shadow */
+    border: 1px solid #f1f5f9;
+}
+
+.structCardHeader {
+    display: flex;
+    min-height: 130px;
+    position: relative;
+    background: white;
+}
+
+.structCardHeaderText {
+    flex: 1;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    background: white;
+    /* Removed gradient here to use the wrapper overlay instead */
+}
+
+.structCardImageWrapper {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.structCardImageWrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 15%, transparent 50%);
+    z-index: 2;
+}
+
+.structCardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.structCardBottom {
+    padding: 1.25rem;
+    background: white;
+    flex: 1;
+    border-top: 1px solid #f8fafc;
+}
+
+.structIconBox {
+    width: 35px;
+    height: 35px;
+    background: #848b4d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.structCardTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.structCardDesc {
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .curriculum {
+        grid-template-columns: 1fr;
+    }
+
+    .structGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .structGridRow2 {
+        display: none;
+        /* Let the main grid handle it */
+    }
+}
+
+@media (max-width: 768px) {
+    .structGrid {
+        grid-template-columns: 1fr;
+    }
 }
