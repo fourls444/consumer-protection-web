@@ -27,7 +27,10 @@
 }
 
 .menuItem:hover {
-    background: #eeeeee;
+    background: linear-gradient(90deg, #6b6b1d 0%, #c2cd92 100%);
+    color: white !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(107, 107, 29, 0.2);
 }
 
 .activeItem {
@@ -43,7 +46,7 @@
         overflow-x: auto;
         padding-bottom: 1rem;
     }
-    
+
     .menuItem {
         white-space: nowrap;
         width: auto;

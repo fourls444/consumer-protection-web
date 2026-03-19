@@ -7,16 +7,17 @@ import Sidebar from "@/components/home/Sidebar";
 import HistoryContent from "@/components/history/HistoryContent";
 import VisionContent from "@/components/vision/VisionContent";
 import CurriculumContent from "@/components/curriculum/CurriculumContent";
+import ExpertiseContent from "@/components/expertise/ExpertiseContent";
+import CommitteeContent from "@/components/committee/CommitteeContent";
 import HighlightSection from "@/components/home/HighlightSection";
 import EventSection from "@/components/home/EventSection";
 import NewsSection from "@/components/home/NewsSection";
+import LogoContent from "@/components/logo/LogoContent";
 
 // Styling Imports
 import layoutStyles from "@/components/home/HomeLayout.module.css";
 import visionStyles from "@/components/vision/Vision.module.css";
 import curriculumStyles from "@/components/curriculum/Curriculum.module.css";
-import expertiseStyles from "@/components/expertise/Expertise.module.css";
-import committeeStyles from "@/components/committee/Committee.module.css";
 import logoStyles from "@/components/logo/Logo.module.css";
 import contactStyles from "@/components/contact/Contact.module.css";
 
@@ -32,26 +33,12 @@ export default function Home() {
       case "curriculum":
         return <CurriculumContent />;
       case "expertise":
-        return (
-          <>
-            <h1 className={expertiseStyles.contentTitle}>สาขาความเชี่ยวชาญ</h1>
-            <p className={expertiseStyles.description}>กำลังเตรียมข้อมูล...</p>
-          </>
-        );
+        return <ExpertiseContent />;
       case "committee":
-        return (
-          <>
-            <h1 className={committeeStyles.contentTitle}>คณะกรรมการบริหาร</h1>
-            <p className={committeeStyles.description}>กำลังเตรียมข้อมูล...</p>
-          </>
-        );
+        return <CommitteeContent />;
+
       case "logo":
-        return (
-          <>
-            <h1 className={logoStyles.contentTitle}>ตราสัญลักษณ์</h1>
-            <p className={logoStyles.description}>กำลังเตรียมข้อมูล...</p>
-          </>
-        );
+        return <LogoContent />;
       case "contact":
         return (
           <>

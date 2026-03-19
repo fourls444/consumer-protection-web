@@ -1,13 +1,166 @@
-.contentTitle {
-    font-size: 1.85rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 1.5rem;
+/* ========================================
+   Logo Section Wrapper
+   ======================================== */
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.description {
-    font-size: 1.05rem;
-    color: #475569;
-    line-height: 1.75;
-    margin-bottom: 3rem;
+/* ========================================
+   Top Section Layout (Main Card + Side Cards)
+   ======================================== */
+.topGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ========================================
+   Main Logo Card (Left)
+   ======================================== */
+.mainLogoCard {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  position: relative;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  color: #e2e8ce;
+  opacity: 0.6;
+}
+
+.logoImageContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.logoInfo {
+  width: 100%;
+}
+
+.mainLogoTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.mainLogoDesc {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* ========================================
+   Side Grid (3 Stacked Cards)
+   ======================================== */
+.sideGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sideCard {
+  background: #f8f9fa;
+  border-radius: 18px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.sideCard:hover {
+  background: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  color: #848b4d;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #5d6d7e;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Bottom Grid (2 Cards)
+   ======================================== */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.bottomCard {
+  background: #f8f9fa;
+  border-radius: 18px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.bottomCard:hover {
+  background: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 1100px) {
+  .topGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
 }
