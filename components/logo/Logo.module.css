@@ -1,0 +1,13 @@
+.contentTitle {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+}

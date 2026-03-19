@@ -1,0 +1,79 @@
+.header {
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-kanit), sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #686805;
+}
+
+.topBanner {
+    color: white;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .topBanner {
+        padding: 0.75rem 4rem;
+    }
+}
+
+.brandArea {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background-color: white;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.brandTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    line-height: 1.25;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .brandTitle {
+        font-size: 1.5rem;
+    }
+}
+
+.brandSubtitle {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .topBanner {
+        padding: 1rem;
+        flex-direction: row;
+    }
+    
+    .brandTitle {
+        font-size: 1.1rem;
+    }
+
+    .brandSubtitle {
+        font-size: 0.7rem;
+    }
+    
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+}

@@ -1,0 +1,99 @@
+.highlight {
+    padding: 6rem 2rem;
+    background-color: #fdfdfd;
+    background-image: repeating-linear-gradient(90deg, #f0f3e8 0px, #f0f3e8 1px, transparent 1px, transparent 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4b5320;
+    letter-spacing: -0.02em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.imageWrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover {
+    transform: translateY(-5px);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.pagination {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 4rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e5e7eb;
+}
+
+.activeDot {
+    background: #8e9a66;
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* Specific heights to mimic the staggered look */
+.tall { height: 400px; }
+.medium { height: 280px; }
+.short { height: 220px; }
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .title {
+        font-size: 1.75rem;
+    }
+}

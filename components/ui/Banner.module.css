@@ -1,0 +1,104 @@
+.banner {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.2) 100%), url('/images/banner.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    color: white;
+    font-family: var(--font-kanit), sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 12px;
+    object-fit: contain;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    flex-shrink: 0;
+}
+
+.textGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 0.5rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.025em;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+    .banner {
+        padding: 0 3rem;
+        height: 350px;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .logo {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: auto;
+        padding: 3rem 1.5rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('/images/img.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+}
