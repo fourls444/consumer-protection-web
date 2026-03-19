@@ -13,6 +13,7 @@ import HighlightSection from "@/components/home/HighlightSection";
 import EventSection from "@/components/home/EventSection";
 import NewsSection from "@/components/home/NewsSection";
 import LogoContent from "@/components/logo/LogoContent";
+import ContactContent from "@/components/contact/ContactContent";
 
 // Styling Imports
 import layoutStyles from "@/components/home/HomeLayout.module.css";
@@ -40,12 +41,7 @@ export default function Home() {
       case "logo":
         return <LogoContent />;
       case "contact":
-        return (
-          <>
-            <h1 className={contactStyles.contentTitle}>ติดต่อและสถานที่ตั้ง</h1>
-            <p className={contactStyles.description}>กำลังเตรียมข้อมูล...</p>
-          </>
-        );
+        return <ContactContent />;
       default:
         return <HistoryContent />;
     }
