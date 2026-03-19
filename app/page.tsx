@@ -6,6 +6,8 @@ import IntroSection from "@/components/home/IntroSection";
 import Sidebar from "@/components/home/Sidebar";
 import HistoryContent from "@/components/history/HistoryContent";
 import HighlightSection from "@/components/home/HighlightSection";
+import EventSection from "@/components/home/EventSection";
+import NewsSection from "@/components/home/NewsSection";
 
 // Styling Imports
 import layoutStyles from "@/components/home/HomeLayout.module.css";
@@ -81,6 +83,8 @@ export default function Home() {
         </div>
       </div>
       <HighlightSection />
+      <EventSection />
+      <NewsSection />
     </main>
   );
 }
