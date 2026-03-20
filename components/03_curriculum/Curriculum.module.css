@@ -376,6 +376,11 @@
 @media (max-width: 1200px) {
     .curriculum {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mainCard {
+        max-width: 100%;
     }
 
     .structGrid {
@@ -384,12 +389,42 @@
 
     .structGridRow2 {
         display: none;
-        /* Let the main grid handle it */
+        /* Handle in JS or by changing CSS */
     }
 }
 
 @media (max-width: 768px) {
     .structGrid {
         grid-template-columns: 1fr;
+    }
+    
+    .headerTitle {
+        font-size: 1.15rem;
+        white-space: normal;
+    }
+
+    .objGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .objTitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .objCard {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .subGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .downloadBtn {
+        width: 100%;
+        justify-content: center;
     }
 }

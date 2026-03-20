@@ -90,10 +90,26 @@
 }
 
 @media (max-width: 768px) {
+    .highlight {
+        padding: 4rem 1.5rem;
+    }
     .grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
     .title {
         font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .header {
+        margin-bottom: 2.5rem;
+    }
+    .title {
+        font-size: 1.5rem;
     }
 }

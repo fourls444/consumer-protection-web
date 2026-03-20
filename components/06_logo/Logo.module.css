@@ -163,4 +163,30 @@
   .bottomGrid {
     grid-template-columns: 1fr;
   }
+  
+  .mainLogoCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .logoImageContainer {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+    .sideCard, .bottomCard {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
+
+    .mainLogoTitle {
+        font-size: 1.05rem;
+    }
+
+    .mainLogoDesc {
+        font-size: 0.85rem;
+    }
 }

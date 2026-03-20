@@ -65,10 +65,17 @@
     .expertiseGrid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
 
 @media (max-width: 640px) {
     .expertiseGrid {
         grid-template-columns: 1fr;
+    }
+    .cardBody {
+        padding: 1rem;
     }
 }

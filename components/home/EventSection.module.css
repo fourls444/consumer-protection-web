@@ -143,6 +143,7 @@
 @media (max-width: 1024px) {
     .item {
         grid-template-columns: 100px 1fr;
+        gap: 2rem;
     }
     .imageWrapper {
         display: none;
@@ -150,16 +151,45 @@
 }
 
 @media (max-width: 768px) {
+    .event {
+        padding: 4rem 1.5rem;
+    }
     .title {
         font-size: 1.75rem;
     }
     .item {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 2rem 0;
     }
     .date {
         flex-direction: row;
         gap: 1rem;
         align-items: baseline;
+        justify-content: flex-start;
+    }
+    .day {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event {
+        padding: 3rem 1rem;
+    }
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    .day {
+        font-size: 2.5rem;
+    }
+    .month {
+        font-size: 1.1rem;
+    }
+    .eventTitle {
+        font-size: 1.35rem;
     }
 }

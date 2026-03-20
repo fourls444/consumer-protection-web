@@ -251,19 +251,36 @@
 @media (max-width: 600px) {
   .membersGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .heroQuote {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .heroSection {
     padding: 1.5rem 1rem 0;
     border-radius: 14px;
+    margin-bottom: 4rem;
   }
 
   .chairmanCard {
-    width: 210px;
+    width: 220px;
   }
+
+  .chairmanName {
+    font-size: 0.95rem;
+  }
+
+  .memberInfo {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .chairmanCard {
+        width: 100%;
+        max-width: 240px;
+    }
 }
