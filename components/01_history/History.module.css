@@ -32,13 +32,17 @@
 }
 
 .timeLabel {
-    display: flex;
+    background: linear-gradient(90deg, #f0f0d8 0%, #fff 80%);
+    border-left: 4px solid #7a7a1f;
     flex-direction: column;
-    padding: 1.5rem 2rem; /* Add more vertical padding for balance */
-    border-left: 6px solid #c2cd92;
-    background: linear-gradient(to right, rgba(194, 205, 146, 0.4) 0%, rgba(194, 205, 146, 0) 100%);
-    border-radius: 0 12px 12px 0;
-    height: 100%; /* Fill the entire grid row height */
+    justify-content: center;
+    gap: 4px;
+    min-width: 220px;
+    max-width: 220px;
+    margin: 10px 0;
+    padding: 18px 20px;
+    display: flex;
+    box-shadow: 0 4px 6px -4px #0000001a;
 }
 
 .year {

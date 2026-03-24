@@ -9,6 +9,177 @@
     display: flex;
 }
 
+/*ระยะสั้น*/
+.rowHeader{
+    border-left: 5px solid #7a7536;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0 20px;
+    padding-left: 12px;
+    display: flex;
+}
+
+.viewAllBtn{
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;color: #64748b;
+    cursor: pointer;
+    background: 0 0;
+    border: none;
+    align-items: center;
+    gap: .25rem;
+    padding: 0;
+    font-size: 14.5px;
+    font-weight: 700;
+    transition: all .2s;
+    display: flex;
+}
+
+.cardsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+}
+.courseCard {
+    border: 1px solid #e8e8dc;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+    background: #fff;
+}
+.cardHeader1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 24px 20px 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8dc;
+    transition: background 0.25s ease, border-color 0.25s ease;
+    min-height: 120px;
+}
+.courseCard:hover .cardHeader1 {
+    background: linear-gradient(to right,#f0f0d8 0%, #FFFFFF 80%);
+   
+}
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+    transition: color 0.25s ease;
+}
+.cardIcon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #72721B 0%, #A4A865 100%);
+    border-radius: 12px;
+}
+
+.cardSubTitle {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    margin: 0;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    transition: color 0.25s ease;
+}
+.cardBody {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.cardDesc {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+}
+.detailSection {
+    margin: 0;
+}
+
+/* รายละเอียด — thick green LEFT bar */
+.detailTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 12px 0;
+    padding-left: 12px;
+    border-left: 4px solid #7a7536;
+    line-height: 1.4;
+}
+
+.detailList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detailList li {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.detailList li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7a7536;
+    font-weight: 700;
+}
+
+.downloadBtn1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-top: 1px solid #e8e8dc;
+    border-radius: 0 0 16px 16px;
+    background: transparent;
+    color: #555;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: auto;
+}
+.downloadBtn1:hover {
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;
+}
+.courseCard:hover .downloadBtn1 {
+    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
+    border-top-color: transparent;
+    color: #fff;
+}
+.courseCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+/*end*/
+
 .mainCard {
     background: white;
     border-radius: 20px;
@@ -173,206 +344,6 @@
     opacity: 0.9;
 }
 
-/* Objectives Section */
-.objectives {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.objBadge {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #eff1e4;
-    padding: 0.4rem 1.25rem;
-    border-radius: 50px;
-    color: #4b5320;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.objTitle {
-    font-size: 1.85rem;
-    font-weight: 700;
-    color: #1e293b;
-    text-align: center;
-}
-
-.objSubtitle {
-    font-size: 0.95rem;
-    color: #64748b;
-    margin-bottom: 1.5rem;
-}
-
-.objGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.objCard {
-    background: white;
-    padding: 1.25rem;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-    border: 1px solid #f1f5f9;
-}
-
-.objIconBox {
-    min-width: 50px;
-    height: 50px;
-    background: #848b4d;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-}
-
-.objInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.objCardTitle {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1e293b;
-}
-
-.objCardDesc {
-    font-size: 0.85rem;
-    color: #64748b;
-    line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-    .objGrid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Course Structure Section */
-.structSection {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.structGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.structGridRow2 {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    width: 66%;
-    /* Roughly 2 out of 3 columns */
-}
-
-.structCard {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Slightly stronger shadow */
-    border: 1px solid #f1f5f9;
-}
-
-.structCardHeader {
-    display: flex;
-    min-height: 130px;
-    position: relative;
-    background: white;
-}
-
-.structCardHeaderText {
-    flex: 1;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 3;
-    background: white;
-    /* Removed gradient here to use the wrapper overlay instead */
-}
-
-.structCardImageWrapper {
-    width: 40%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.structCardImageWrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 15%, transparent 50%);
-    z-index: 2;
-}
-
-.structCardImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.structCardBottom {
-    padding: 1.25rem;
-    background: white;
-    flex: 1;
-    border-top: 1px solid #f8fafc;
-}
-
-.structIconBox {
-    width: 35px;
-    height: 35px;
-    background: #848b4d;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.structCardTitle {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 0;
-}
-
-.structCardDesc {
-    font-size: 0.8rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
-}
-
 @media (max-width: 1200px) {
     .curriculum {
         grid-template-columns: 1fr;
@@ -382,43 +353,16 @@
     .mainCard {
         max-width: 100%;
     }
-
-    .structGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .structGridRow2 {
-        display: none;
-        /* Handle in JS or by changing CSS */
-    }
 }
 
 @media (max-width: 768px) {
-    .structGrid {
-        grid-template-columns: 1fr;
-    }
-    
     .headerTitle {
         font-size: 1.15rem;
         white-space: normal;
     }
-
-    .objGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .objTitle {
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 480px) {
-    .objCard {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
-    }
-
     .subGrid {
         grid-template-columns: 1fr;
     }

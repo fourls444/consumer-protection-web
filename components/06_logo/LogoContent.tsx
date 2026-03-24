@@ -1,91 +1,89 @@
-"use client";
-
-import { HiOutlineUserCircle, HiOutlineChatAlt2 } from "react-icons/hi";
 import styles from "./Logo.module.css";
 
-const logoDetails = [
-  {
-    icon: <HiOutlineUserCircle />,
-    title: "รูปดาว",
-    description: "สื่อถึงความเป็นเลิศทางวิชาการ มาตรฐานวิชาชีพ และการพัฒนาความรู้ด้านการคุ้มครองผู้บริโภค",
-  },
-  {
-    icon: <HiOutlineUserCircle />,
-    title: "รูปมือหรือเปลวพลังด้านล่าง",
-    description: "สื่อถึงการคุ้มครอง การสนับสนุน และการดูแลความปลอดภัยของผู้บริโภคด้านยาและสุขภาพ",
-  },
-  {
-    icon: <HiOutlineUserCircle />,
-    title: "วงรีของตราสัญลักษณ์",
-    description: "สื่อถึงความเป็นองค์กรวิชาการที่มีความเป็นสากล และความร่วมมือของเครือข่ายผู้เชี่ยวชาญทั้งในและต่างประเทศ",
-  },
-];
-
-const bottomDetails = [
-  {
-    icon: <HiOutlineUserCircle />,
-    title: "งูพันถ้วยยา (Bowl of Hygieia)",
-    description: "สัญลักษณ์สากลของวิชาชีพเภสัชกรรม แสดงถึงองค์ความรู้ด้านยา การดูแลสุขภาพ และบทบาทของเภสัชกรในการใช้ยาอย่างปลอดภัย",
-  },
-  {
-    icon: <HiOutlineUserCircle />,
-    title: "สีเขียว",
-    description: "สื่อถึงสุขภาพ ความปลอดภัย ความสมดุล และความยั่งยืนของระบบสาธารณสุข",
-  },
-];
+/* Simple person/user icon — same icon for all info cards */
+const InfoIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7a7536" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+    </svg>
+);
 
 export default function LogoContent() {
-  return (
-    <div className={styles.logoWrapper}>
-      <div className={styles.topGrid}>
-        {/* Main Logo Card */}
-        <div className={styles.mainLogoCard}>
-          <div className={styles.quoteIcon}>
-            <HiOutlineChatAlt2 />
-          </div>
-          <div className={styles.logoImageContainer}>
-            <img 
-              src="/images/logo/logo.png" 
-              alt="วิทยาลัยการคุ้มครองผู้บริโภคด้านยา logo" 
-              className={styles.logoImage} 
-            />
-          </div>
-          <div className={styles.logoInfo}>
-            <h2 className={styles.mainLogoTitle}>
-              ตราสัญลักษณ์ของวิทยาลัยการคุ้มครองผู้บริโภคด้านยาและสุขภาพแห่งประเทศไทย
-            </h2>
-            <p className={styles.mainLogoDesc}>
-              สื่อถึงบทบาทของวิทยาลัยในการพัฒนาความเชี่ยวชาญทางวิชาชีพ การส่งเสริมองค์ความรู้ และการคุ้มครองความปลอดภัยของผู้บริโภคด้านยาและผลิตภัณฑ์สุขภาพในประเทศไทย
-            </p>
-          </div>
-        </div>
+    return (
+        <section className={styles.section}>
+            <div className={styles.topRow}>
+                {/* LOGO CARD — tall, left column */}
+                <div className={styles.logoCard}>
+                    <div className={styles.logoTop}>
+                        <img src="/images/logo/logo.png" alt="CPPGx Logo" className={styles.logoImage} />
+                        <span className={styles.quoteIcon}>&rdquo;</span>
+                    </div>
+                    <div>
+                        <h3 className={styles.logoTitle}>
+                            ตราสัญลักษณ์ของวิทยาลัยการคุ้มครองผู้บริโภคด้านยา<br/>และสุขภาพแห่งประเทศไทย
+                        </h3>
+                        <p className={styles.logoDesc}>
+                            สื่อถึงบทบาทของวิทยาลัยในการพัฒนาความเชี่ยวชาญทางวิชาชีพ การส่งเสริมองค์ความรู้ และการคุ้มครองความปลอดภัยของผู้บริโภคด้านยาและผลิตภัณฑ์สุขภาพในประเทศไทย
+                        </p>
+                    </div>
+                </div>
 
-        {/* Side Grid of 3 Cards */}
-        <div className={styles.sideGrid}>
-          {logoDetails.map((item, index) => (
-            <div key={index} className={styles.sideCard}>
-              <div className={styles.cardIcon}>{item.icon}</div>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardDesc}>{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+                {/* RIGHT COLUMN - 3 Cards */}
+                <div className={styles.rightColumn}>
+                    <div className={styles.infoCard}>
+                        <div className={styles.infoIcon}><InfoIcon /></div>
+                        <div>
+                            <h4 className={styles.infoTitle}>รูปดาว</h4>
+                            <p className={styles.infoDesc}>
+                                สื่อถึงความเป็นเลิศทางวิชาการ มาตรฐานวิชาชีพ และการพัฒนาความรู้ด้านการคุ้มครองผู้บริโภค
+                            </p>
+                        </div>
+                    </div>
 
-      {/* Bottom Grid of 2 Cards */}
-      <div className={styles.bottomGrid}>
-        {bottomDetails.map((item, index) => (
-          <div key={index} className={styles.bottomCard}>
-            <div className={styles.cardIcon}>{item.icon}</div>
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardDesc}>{item.description}</p>
+                    <div className={styles.infoCard}>
+                        <div className={styles.infoIcon}><InfoIcon /></div>
+                        <div>
+                            <h4 className={styles.infoTitle}>รูปมือหรือเปลวพลังด้านล่าง</h4>
+                            <p className={styles.infoDesc}>
+                                สื่อถึงการคุ้มครอง การสนับสนุน และการดูแลความปลอดภัยของผู้บริโภคด้านยาและสุขภาพ
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className={styles.infoCard}>
+                        <div className={styles.infoIcon}><InfoIcon /></div>
+                        <div>
+                            <h4 className={styles.infoTitle}>วงรีของตราสัญลักษณ์</h4>
+                            <p className={styles.infoDesc}>
+                                สื่อถึงความเป็นองค์กรวิชาการที่มีความเป็นสากล และความร่วมมือของเครือข่ายผู้เชี่ยวชาญทั้งในและต่างประเทศ
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+
+            {/* BOTTOM ROW - 2 Cards */}
+            <div className={styles.bottomRow}>
+                <div className={styles.infoCard}>
+                    <div className={styles.infoIcon}><InfoIcon /></div>
+                    <div>
+                        <h4 className={styles.infoTitle}>งูพันถ้วยยา (Bowl of Hygieia)</h4>
+                        <p className={styles.infoDesc}>
+                            สัญลักษณ์สากลของวิชาชีพเภสัชกรรม แสดงถึงองค์ความรู้ด้านยา การดูแลสุขภาพ และบทบาทของเภสัชกรในการใช้ยาอย่างปลอดภัย
+                        </p>
+                    </div>
+                </div>
+
+                <div className={styles.infoCard}>
+                    <div className={styles.infoIcon}><InfoIcon /></div>
+                    <div>
+                        <h4 className={styles.infoTitle}>สีเขียว</h4>
+                        <p className={styles.infoDesc}>
+                            สื่อถึงสุขภาพ ความปลอดภัย ความสมดุล และความยั่งยืนของระบบสาธารณสุข
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }

@@ -1,192 +1,141 @@
-/* ========================================
-   Logo Section Wrapper
-   ======================================== */
-.logoWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
+.section {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-/* ========================================
-   Top Section Layout (Main Card + Side Cards)
-   ======================================== */
-.topGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+/* ===================== GRID LAYOUT ===================== */
+.topRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: stretch;
 }
 
-/* ========================================
-   Main Logo Card (Left)
-   ======================================== */
-.mainLogoCard {
-  background: white;
-  border-radius: 24px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: left;
-  position: relative;
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: space-between;
+}
+.rightColumn > .infoCard {
+    flex: 1;
 }
 
-.quoteIcon {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 3rem;
-  color: #e2e8ce;
-  opacity: 0.6;
+.bottomRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
 }
 
-.logoImageContainer {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 240px;
-  height: 240px;
+/* ===================== LOGO CARD ===================== */
+.logoCard {
+    background: linear-gradient(
+        135deg, 
+        #FFFFFF 0%,
+        #F6F8ED 30%,
+        #EAEED7 70%,
+        #E1E6CD 100%
+    );
+    border-radius: 16px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.logoTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .logoImage {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+    width: 110px;
+    height: auto;
+    object-fit: contain;
 }
 
-.logoInfo {
-  width: 100%;
+.quoteIcon {
+    font-size: 64px;
+    color: #cdd4b1;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    font-weight: bold;
+    margin-top: -10px;
 }
 
-.mainLogoTitle {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+.logoTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
 }
 
-.mainLogoDesc {
-  font-size: 0.95rem;
-  color: #4b5563;
-  line-height: 1.7;
+.logoDesc {
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* ========================================
-   Side Grid (3 Stacked Cards)
-   ======================================== */
-.sideGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* ===================== INFO CARD ===================== */
+.infoCard {
+    background: #F7F7F7;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.sideCard {
-  background: #f8f9fa;
-  border-radius: 18px;
-  padding: 1.5rem;
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-  transition: all 0.3s ease;
+.infoIcon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.sideCard:hover {
-  background: white;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+.infoTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
 }
 
-.cardIcon {
-  font-size: 1.5rem;
-  color: #848b4d;
-  flex-shrink: 0;
-  margin-top: 0.25rem;
+.infoDesc {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.cardTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-
-.cardDesc {
-  font-size: 0.9rem;
-  color: #5d6d7e;
-  line-height: 1.6;
-}
-
-/* ========================================
-   Bottom Grid (2 Cards)
-   ======================================== */
-.bottomGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.bottomCard {
-  background: #f8f9fa;
-  border-radius: 18px;
-  padding: 1.5rem;
-  display: flex;
-  gap: 1.25rem;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-}
-
-.bottomCard:hover {
-  background: white;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
-}
-
-/* ========================================
-   Responsive
-   ======================================== */
-@media (max-width: 1100px) {
-  .topGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .bottomGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .mainLogoCard {
-    padding: 2rem 1.5rem;
-  }
-  
-  .logoImageContainer {
-    width: 180px;
-    height: 180px;
-  }
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+    .topRow, .bottomRow {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
-    .sideCard, .bottomCard {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem 1rem;
+    .logoImage {
+        width: 90px;
     }
-
-    .mainLogoTitle {
-        font-size: 1.05rem;
+    .quoteIcon {
+        font-size: 48px;
     }
-
-    .mainLogoDesc {
-        font-size: 0.85rem;
+    .logoCard {
+        padding: 24px;
+    }
+    .infoCard {
+        padding: 20px;
     }
 }
