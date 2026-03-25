@@ -14,6 +14,7 @@ import EventSection from "@/components/home/EventSection";
 import NewsSection from "@/components/home/NewsSection";
 import LogoContent from "@/components/06_logo/LogoContent";
 import ContactContent from "@/components/07_contact/ContactContent";
+import RegistrationModal from "@/components/ui/RegistrationModal";
 
 // Styling Imports
 import layoutStyles from "@/components/home/HomeLayout.module.css";
@@ -45,6 +46,7 @@ export default function Home() {
 
   return (
     <main>
+      <RegistrationModal />
       <Banner />
       <IntroSection />
       <div className={layoutStyles.container}>
