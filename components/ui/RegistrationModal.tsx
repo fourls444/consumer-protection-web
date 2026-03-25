@@ -50,6 +50,9 @@ const RegistrationModal = () => {
         <p className={styles.subtitle}>
           ⚠️ เนื้อหาต่อไปนี้คือข้อมูลตัวอย่าง ห้ามนำไปเผยแพร่
         </p>
+        <p className={styles.desktopWarning}>
+          กรุณาเปิดบนคอมพิวเตอร์
+        </p>
 
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
           <div className={styles.inputGroup}>

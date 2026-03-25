@@ -47,6 +47,23 @@
   border: 1px dashed rgba(211, 47, 47, 0.3);
 }
 
+.desktopWarning {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a4f8b;
+  margin-top: -15px;
+  margin-bottom: 25px;
+  padding: 10px 16px;
+  background: #eef5ff;
+  border-radius: 8px;
+  border: 1px solid rgba(26, 79, 139, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -132,7 +149,7 @@
   .modalContent {
     padding: 30px 20px;
   }
-  
+
   .title {
     font-size: 1.5rem;
   }
