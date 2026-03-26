@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./HighlightSection.module.css";
+import { FiMaximize2, FiX } from "react-icons/fi";
 
 const highlightImages = [
   // Each array is a column
@@ -26,7 +28,33 @@ const highlightImages = [
   ],
 ];
 
+export interface HighlightImage {
+  src: string;
+  alt: string;
+}
+
 export default function HighlightSection() {
+  const [selectedImage, setSelectedImage] = useState<HighlightImage | null>(null);
+
+  // Prevent scrolling when lightbox is open & close on escape
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleEsc);
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [selectedImage]);
+
   return (
     <section className={styles.highlight}>
       <header className={styles.header}>
@@ -45,6 +73,8 @@ export default function HighlightSection() {
               <div 
                 key={imgIdx} 
                 className={`${styles.imageWrapper} ${image.size}`}
+                style={{ "--index": colIdx + imgIdx } as React.CSSProperties}
+                onClick={() => setSelectedImage(image)}
               >
                 <img 
                   src={image.src} 
@@ -52,20 +82,42 @@ export default function HighlightSection() {
                   className={styles.image}
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
+                <div className={styles.overlay}>
+                  <FiMaximize2 className={styles.icon} />
+                </div>
               </div>
             ))}
           </div>
         ))}
       </div>
 
-      <div className={styles.pagination}>
-        <span className={styles.activeDot}></span>
-        <span className={styles.dot}></span>
-        <span className={styles.dot}></span>
-        <span className={styles.dot}></span>
-        <span className={styles.dot}></span>
-        <span className={styles.dot}></span>
-      </div>
+      {/* Lightbox / Modal */}
+      {selectedImage && (
+        <div 
+          className={styles.lightbox}
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className={styles.closeBtn}
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+          >
+            <FiX />
+          </button>
+          <div 
+            className={styles.lightboxContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={selectedImage.src} 
+              alt={selectedImage.alt} 
+              className={styles.lightboxImage}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
