@@ -1,3 +1,4 @@
+/* ส่วนหลักของ Highlight Section */
 .highlight {
     padding: 8rem 2rem;
     background-color: #fdfdfd;
@@ -11,6 +12,7 @@
     position: relative;
 }
 
+/* ส่วนหัวข้อและคำโปรย */
 .header {
     text-align: center;
     margin-bottom: 6rem;
@@ -39,6 +41,7 @@
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
+/* ตารางแสดงรูปภาพแบบ Masonry-like Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -54,7 +57,7 @@
     gap: 2rem;
 }
 
-/* Floating animations for different columns to create depth */
+/* Animation ลอยตัว (Floating) สำหรับแต่ละคอลัมน์เพื่อให้ดูมีมิติ */
 .column:nth-child(1) { animation: float 6s ease-in-out infinite alternate; }
 .column:nth-child(2) { animation: float 8s ease-in-out infinite alternate-reverse; }
 .column:nth-child(3) { animation: float 7s ease-in-out infinite alternate; padding-top: 2rem; }
@@ -66,6 +69,7 @@
     to { transform: translateY(-20px); }
 }
 
+/* กล่องครอบรูปภาพพร้อมเอฟเฟกต์ Hover และ Animation ขยับเข้า */
 .imageWrapper {
     position: relative;
     border-radius: 24px;
@@ -79,6 +83,7 @@
     animation-delay: calc(var(--index) * 0.1s + 0.4s);
 }
 
+/* พื้นหลังไล่เฉดเมื่อ Hover */
 .imageWrapper::before {
     content: '';
     position: absolute;
@@ -89,6 +94,7 @@
     z-index: 2;
 }
 
+/* เอฟเฟกต์แสงสะท้อน (Shine) วิ่งผ่านรูป */
 .imageWrapper::after {
     content: '';
     position: absolute;
@@ -133,7 +139,7 @@
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
+/* Overlay และ Icon เมื่อ Hover */
 .overlay {
     position: absolute;
     inset: 0;
@@ -163,7 +169,7 @@
     transform: scale(1) rotate(0deg);
 }
 
-
+/* Keyframes สำหรับ Animation ต่างๆ */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -174,11 +180,12 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Specific heights */
+/* ความสูงของรูปภาพแบบต่างๆ */
 .tall { height: 440px; }
 .medium { height: 320px; }
 .short { height: 260px; }
 
+/* การปรับแต่งตามขนาดหน้าจอ (Responsive) */
 @media (max-width: 1200px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
@@ -217,6 +224,7 @@
     }
 }
 
+/* สไตล์สำหรับ Lightbox (รูปเต็มจอ) */
 .lightbox {
     position: fixed;
     inset: 0;

@@ -1,3 +1,4 @@
+/* ส่วนท้ายของเว็บไซต์ (Footer) */
 .footer {
     background-color: #F9F9F9;
     color: #334155;
@@ -6,6 +7,7 @@
     padding-bottom: 3rem;
 }
 
+/* การจัดวางเลย์เอาท์ภายใน Footer แบบ Grid */
 .footerInner {
     display: grid;
     grid-template-columns: 1fr 1.5fr;

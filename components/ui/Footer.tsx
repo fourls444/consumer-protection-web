@@ -13,13 +13,17 @@ import {
 import { SiLine } from "react-icons/si";
 import styles from "./Footer.module.css";
 
+/**
+ * ส่วนท้ายของเว็บไซต์ (Footer)
+ * แสดงข้อมูลการติดต่อ, โซเชียลมีเดีย, สถิติผู้เข้าชม และเบอร์โทรภายใน
+ */
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
         <footer className={styles.footer}>
             <div className={styles.footerInner}>
-                {/* Left Column: Contact info */}
+                {/* คอลัมน์ซ้าย: ข้อมูลการติดต่อหลัก */}
                 <div className={styles.contactSection}>
                     <h1 className={styles.mainTitle}>ติดต่อสภาเภสัชกรรม</h1>
                     <div className={styles.contactInfo}>
@@ -40,6 +44,7 @@ export default function Footer() {
                             <span>pharthai@pharmacycouncil.org</span>
                         </div>
 
+                        {/* ช่องทางโซเชียลมีเดีย */}
                         <div className={styles.socialChannels}>
                             <p className={styles.sectionTitle}>ช่องทางการติดต่อสภาเภสัชกรรม</p>
                             <div className={styles.socialIcons}>
@@ -56,9 +61,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Right Content Wrapper */}
+                {/* คอลัมน์ขวา: สถิติ, เบอร์ภายใน และบริการอื่นๆ */}
                 <div className={styles.rightContent}>
-                    {/* Statistics Section - Top Right */}
+                    {/* ส่วนสถิติการเข้าชม */}
                     <div className={styles.statsContainer}>
                         <span>สถิติการเข้าชม </span>
                         <span className={styles.statValue}>76,065,271</span>
@@ -67,7 +72,7 @@ export default function Footer() {
                         <span className={styles.statValue}>1,402</span>
                     </div>
 
-                    {/* Extensions Block */}
+                    {/* ส่วนหมายเลขโทรศัพท์ภายในหน่วยงาน */}
                     <div className={styles.extensionSection}>
                         <h3 className={styles.sectionTitle}>หมายเลขภายในหน่วยงานต่าง ๆ</h3>
                         <div className={styles.extensionGrid}>
@@ -106,7 +111,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Services Section */}
+                    {/* ส่วนลิงก์บริการอื่นๆ */}
                     <div className={styles.servicesBlock}>
                         <h3 className={styles.sectionTitle}>บริการส่วนอื่น</h3>
                         <div className={styles.serviceLinks}>

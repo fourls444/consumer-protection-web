@@ -8,51 +8,39 @@
 }
 
 /* ========================================
-   Hero / Quote Section
+   Section Header
    ======================================== */
-.heroSection {
-  position: relative;
-  background: transparent;
-  padding: 1.5rem 2rem 0 2rem;
+.sectionHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  overflow: visible;
-  margin-bottom: 5rem;
+  gap: 1rem;
 }
 
-.heroContent {
-  text-align: center;
-  max-width: 600px;
-  margin-bottom: 1.5rem;
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.heroQuote {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #2d3319;
-  line-height: 1.8;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.02em;
-}
-
-.heroSubtext {
-  font-size: 0.88rem;
-  color: #6b7a4f;
-  font-weight: 400;
+.sectionDescription {
+  font-size: 1rem;
+  color: #64748b;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* ========================================
-   Chairman Card (overlapping hero)
+   Chairman Section
    ======================================== */
-.chairmanCardWrapper {
-  position: relative;
-  z-index: 2;
+.chairmanSection {
+  margin-bottom: 4rem;
   display: flex;
   justify-content: center;
-  margin-bottom: -4rem;
 }
 
 .chairmanCard {
@@ -114,6 +102,10 @@
   margin: 0 5px 5px 5px;
   position: relative;
   z-index: 2;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .chairmanName {
@@ -140,13 +132,14 @@
    Members Grid Section
    ======================================== */
 .membersSection {
-  padding: 2.5rem 0 1.5rem;
+  padding: 0 0 1.5rem;
 }
 
 .membersGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 /* ========================================
@@ -154,6 +147,7 @@
    ======================================== */
 .memberCard {
   background: transparent;
+  width: 200px;
   border-radius: 14px;
   text-align: left;
   overflow: visible;
@@ -210,6 +204,10 @@
   margin: 0 4px 4px 4px;
   position: relative;
   z-index: 2;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .memberName {
@@ -228,59 +226,57 @@
 /* ========================================
    Responsive
    ======================================== */
-@media (max-width: 1200px) {
-  .membersGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 900px) {
-  .membersGrid {
-    grid-template-columns: repeat(2, 1fr);
+  .sectionTitle {
+    font-size: 1.6rem;
   }
-
-  .heroQuote {
-    font-size: 1.1rem;
-  }
-
-  .heroSection {
-    padding: 2rem 1.25rem 0;
+  .sectionDescription {
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 600px) {
-  .membersGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .sectionTitle {
+    font-size: 1.4rem;
   }
 
-  .heroQuote {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .heroSection {
-    padding: 1.5rem 1rem 0;
-    border-radius: 14px;
-    margin-bottom: 4rem;
+  .chairmanSection {
+    margin-bottom: 2rem;
   }
 
   .chairmanCard {
-    width: 220px;
+    width: 210px;
   }
 
-  .chairmanName {
-    font-size: 0.95rem;
+  .chairmanImageContainer {
+    height: 180px;
+  }
+
+  .chairmanInfo {
+    padding: 1rem;
+  }
+
+  .membersGrid {
+    gap: 1rem;
+  }
+
+  .memberCard {
+    width: 160px;
+  }
+
+  .memberImageContainer {
+    height: 130px;
   }
 
   .memberInfo {
-    padding: 1rem;
+    padding: 0.75rem;
   }
-}
 
-@media (max-width: 480px) {
-    .chairmanCard {
-        width: 100%;
-        max-width: 240px;
-    }
+  .memberName {
+    font-size: 0.75rem;
+  }
+
+  .memberPosition {
+    font-size: 0.65rem;
+  }
 }

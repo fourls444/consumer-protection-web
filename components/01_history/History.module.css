@@ -1,3 +1,4 @@
+/* หัวข้อหลักของส่วนเนื้อหา */
 .contentTitle {
     font-size: 1.85rem;
     font-weight: 700;
@@ -5,6 +6,7 @@
     margin-bottom: 1.5rem;
 }
 
+/* คำอธิบายรายละเอียดเบื้องต้น */
 .description {
     font-size: 1.05rem;
     color: #475569;

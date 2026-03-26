@@ -5,6 +5,9 @@ import Link from "next/link";
 import { HiChevronLeft, HiChevronRight, HiOutlineChevronRight } from "react-icons/hi";
 import styles from "./NewsSection.module.css";
 
+/**
+ * รายการข่าวสารตัวอย่าง
+ */
 const newsList = [
   {
     category: "ข่าวประชาสัมพันธ์",
@@ -29,10 +32,13 @@ const newsList = [
   },
 ];
 
+/**
+ * ส่วนแสดงข่าวสารและกิจกรรมเด่น (News Section)
+ */
 export default function NewsSection() {
   return (
     <section className={styles.news}>
-      {/* Decorative Wavy Background */}
+      {/* ส่วนตกแต่งพื้นหลังลายคลื่น (Decorative Wavy Background) */}
       <div className={styles.bgDecoration}>
         <svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
           <defs>
@@ -56,15 +62,16 @@ export default function NewsSection() {
       </div>
 
       <div className={styles.container}>
-        {/* Featured Slider - Story Highlights */}
+        {/* ส่วนข่าวเด่น (Featured News Slider) */}
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>เรื่องเด่นวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ</h2>
           <div className={styles.controls}>
-            <button className={styles.arrowBtn}><HiChevronLeft /></button>
-            <button className={styles.arrowBtn}><HiChevronRight /></button>
+            <button className={styles.arrowBtn} aria-label="Previous News"><HiChevronLeft /></button>
+            <button className={styles.arrowBtn} aria-label="Next News"><HiChevronRight /></button>
           </div>
         </div>
 
+        {/* การ์ดข่าวเด่นหน้าแรก */}
         <div className={styles.featured}>
           <div className={styles.cardImageWrapper} style={{ height: 'auto', gridColumn: '1' }}>
             <img 
@@ -85,14 +92,14 @@ export default function NewsSection() {
           </div>
         </div>
         
-        {/* Pagination Dots for Slider */}
+        {/* จุดนำทางสำหรับสไลด์ข่าว (Pagination Dots) */}
         <div className={styles.pagination}>
             <span className={styles.activeDot}></span>
             <span className={styles.dot}></span>
             <span className={styles.dot}></span>
         </div>
 
-        {/* Latest News Grid */}
+        {/* ส่วนรายการข่าวสารทั่วไป (Latest News Grid) */}
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>ข่าวสารวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ</h2>
           <Link href="/news" className={styles.seeAll}>
@@ -100,6 +107,7 @@ export default function NewsSection() {
           </Link>
         </div>
 
+        {/* ตารางรายการข่าว */}
         <div className={styles.grid}>
           {newsList.map((news, index) => (
             <div key={index} className={styles.card}>

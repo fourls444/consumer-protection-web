@@ -1,3 +1,4 @@
+/* ส่วนคอนเทนเนอร์หลัก จัดวางแบบ Grid 2 คอลัมน์ (รูปภาพ : เนื้อหา) */
 .container {
     grid-template-columns: 1fr 1.5fr;
     align-items: stretch;

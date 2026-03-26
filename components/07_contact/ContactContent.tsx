@@ -3,11 +3,15 @@
 import { HiOutlineLocationMarker, HiOutlineClock, HiOutlinePhone, HiOutlineMail } from "react-icons/hi";
 import styles from "./Contact.module.css";
 
+/**
+ * ส่วนแสดงข้อมูลการติดต่อ (Contact Content)
+ */
 export default function ContactContent() {
   return (
     <div className={styles.contactWrapper}>
+      {/* ตารางแสดงข้อมูล แบ่งเป็น 2 คอลัมน์ (คำอธิบาย : ข้อมูลติดต่อ) */}
       <div className={styles.contactGrid}>
-        {/* Left Column: Image and Description */}
+        {/* คอลัมน์ซ้าย: รูปภาพและคำอธิบายเบื้องต้น */}
         <div className={styles.leftCol}>
           <div className={styles.imageBox}>
             <img 
@@ -30,12 +34,14 @@ export default function ContactContent() {
           </div>
         </div>
 
-        {/* Right Column: Green Contact Card */}
+        {/* คอลัมน์ขวา: การ์ดข้อมูติดต่อสีเขียว */}
         <div className={styles.rightCol}>
           <div className={styles.contactCard}>
             <h2 className={styles.cardHeader}>วิทยาลัยคุ้มครองผู้บริโภคด้านยา</h2>
             
+            {/* รายการข้อมูลติดต่อ */}
             <div className={styles.infoList}>
+              {/* ที่อยู่ */}
               <div className={styles.infoItem}>
                 <div className={styles.iconBox}>
                   <HiOutlineLocationMarker />
@@ -49,6 +55,7 @@ export default function ContactContent() {
                 </div>
               </div>
 
+              {/* เวลาทำการ */}
               <div className={styles.infoItem}>
                 <div className={styles.iconBox}>
                   <HiOutlineClock />
@@ -59,6 +66,7 @@ export default function ContactContent() {
                 </div>
               </div>
 
+              {/* เบอร์โทรศัพท์ */}
               <div className={styles.infoItem}>
                 <div className={styles.iconBox}>
                   <HiOutlinePhone />
@@ -69,6 +77,7 @@ export default function ContactContent() {
                 </div>
               </div>
 
+              {/* อีเมล */}
               <div className={styles.infoItem}>
                 <div className={styles.iconBox}>
                   <HiOutlineMail />

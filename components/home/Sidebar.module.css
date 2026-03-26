@@ -1,3 +1,4 @@
+/* แถบเมนูด้านข้าง (Sidebar) แบบคงที่ (Sticky) */
 .sidebar {
     width: 280px;
     flex-shrink: 0;

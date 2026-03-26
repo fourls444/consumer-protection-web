@@ -4,10 +4,14 @@ import styles from "./IntroSection.module.css";
 import { FaSearch } from "react-icons/fa";
 import { LuListFilter, LuChevronDown } from "react-icons/lu";
 
+/**
+ * ส่วนแนะนำวิทยาลัยและฟังก์ชันค้นหา (Intro Section)
+ * ประกอบด้วยรูปภาพแนะนำทางซ้าย และข้อความพร้อมระบบค้นหาทางขวา
+ */
 export default function IntroSection() {
   return (
     <section className={styles.container}>
-      {/* Left Column: Image Card */}
+      {/* คอลัมน์ซ้าย: การ์ดรูปภาพพร้อมคำโปรย (Image Card) */}
       <div className={styles.imageSection}>
         <div className={styles.imageCard}>
           <img
@@ -24,7 +28,7 @@ export default function IntroSection() {
         </div>
       </div>
 
-      {/* Right Column: Text & Search */}
+      {/* คอลัมน์ขวา: ข้อความพาดหัวและฟอร์มค้นหา (Text & Search) */}
       <div className={styles.contentSection}>
         <h2 className={styles.headline}>
           “จากองค์ความรู้ สู่การสร้างผู้เชี่ยวชาญ <br />
@@ -36,18 +40,20 @@ export default function IntroSection() {
           และองค์ความรู้ด้านการคุ้มครองผู้บริโภคในระบบสาธารณสุขของประเทศ
         </p>
 
-        {/* Search Card */}
+        {/* ส่วนค้นหารายชื่อผู้ประกอบวิชาชีพ (Search Card) */}
         <div className={styles.searchCard}>
           <h3 className={styles.searchTitle}>ค้นหารายชื่อ</h3>
           <p className={styles.searchSubtitle}>ผู้ประกอบวิชาชีพเภสัชกรรม</p>
 
           <div className={styles.inputGroup}>
+            {/* ตัวเลือกประเภทการค้นหา (Dropdown) */}
             <div className={styles.dropdown}>
               <LuListFilter className={styles.filterIcon} />
               <span>เลขที่ใบอนุญาต</span>
               <LuChevronDown className={styles.chevronIcon} />
             </div>
             
+            {/* ช่องกรอกข้อความค้นหา (Search Input) */}
             <div className={styles.searchInputWrapper}>
               <FaSearch className={styles.searchIcon} />
               <input
@@ -57,6 +63,7 @@ export default function IntroSection() {
               />
             </div>
 
+            {/* ปุ่มกดค้นหา */}
             <button className={styles.searchButton}>ค้นหา</button>
           </div>
         </div>

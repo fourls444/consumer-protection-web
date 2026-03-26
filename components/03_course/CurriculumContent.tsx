@@ -15,6 +15,9 @@ import {
   FaChevronRight
 } from "react-icons/fa6";
 
+/**
+ * ไอคอนหลอดทดลอง (Flask Icon) สำหรับวิชาวิทยาศาสตร์/วิจัย
+ */
 const FlaskIcon = () => (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 3h6" />
@@ -23,6 +26,9 @@ const FlaskIcon = () => (
 );
 
 
+/**
+ * ไอคอนใบประกาศนียบัตร (Certificate Icon)
+ */
 const CertIcon = () => (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -33,12 +39,18 @@ const CertIcon = () => (
     </svg>
 );
 
+/**
+ * ไอคอนคลื่นไฟฟ้าหัวใจ (Medical/EGC Icon) สำหรับงานคลินิก
+ */
 const MedicalIcon = () => (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
     </svg>
 );
 
+/**
+ * ไอคอนดาวน์โหลด (Download Icon)
+ */
 const DownloadIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -48,11 +60,15 @@ const DownloadIcon = () => (
 );
 
 
+/**
+ * ส่วนเนื้อหาหลักสูตรการศึกษาและฝึกอบรม (Curriculum Content)
+ */
 export default function CurriculumContent() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
+      {/* ส่วนแนะนำหลักสูตรฝึกอบรมเฉพาะทาง (Featured Section) */}
       <div className={styles.curriculum}>
-        {/* Left Column - Large Card */}
+        {/* คอลัมน์ซ้าย: การ์ดข้อความหลัก (Main Info Card) */}
         <div className={styles.leftCol}>
           <div className={styles.mainCard}>
             <div className={styles.cardHeader}>
@@ -88,7 +104,7 @@ export default function CurriculumContent() {
           </div>
         </div>
 
-        {/* Right Column - Image and Sub cards */}
+        {/* คอลัมน์ขวา: รูปภาพประกอบและการ์ดย่อย (Image & Sub-cards) */}
         <div className={styles.rightCol}>
           <div className={styles.imageBox}>
             <img
@@ -117,7 +133,7 @@ export default function CurriculumContent() {
         </div>
       </div>
 
-      {/* หลักสูตรระยะสั้น*/}
+      {/* กลุ่มหลักสูตรระยะสั้น (Short-term Courses) */}
 
       <div className={styles.rowHeader}>
                 <h2 className={styles.rowTitle}>หลักสูตรระยะสั้น</h2>
@@ -419,7 +435,7 @@ export default function CurriculumContent() {
                             <ul className={styles.detailList}>
                                 <li>โครงสร้าง: อบรม 16 ชั่วโมง (2 วัน)</li>
                                 <li>ไฮไลท์: บูพื้นฐานความเข้าใจในเภสัชพันธุกรรม, การแพ้ยา, และจริยธรรมการแพทย์เฉพาะบุคคล</li>
-                                <li>คุณสมบัติ: เภสัชกร, บุคลากรสหวิชาชีพ</li>
+                                <li>คุณสมบัติ: เภสัชกร, ทบุมลากรสายสุขภาพ</li>
                             </ul>
                         </div>
                     </div>
@@ -430,9 +446,6 @@ export default function CurriculumContent() {
                 </div>
 
             </div>
-     
-
-    
       
     </div>
   );

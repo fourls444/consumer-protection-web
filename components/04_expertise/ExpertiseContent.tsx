@@ -2,6 +2,9 @@
 
 import styles from "./Expertise.module.css";
 
+/**
+ * ข้อมูลสาขาความเชี่ยวชาญเฉพาะทาง (Expertise Specializations)
+ */
 const expertiseData = [
   {
     id: 1,
@@ -41,16 +44,24 @@ const expertiseData = [
   },
 ];
 
+/**
+ * ส่วนแสดงเนื้อหาสาขาความเชี่ยวชาญ (Expertise Content)
+ * แสดงในรูปแบบ Grid Card
+ */
 export default function ExpertiseContent() {
   return (
     <section className={styles.expertiseSection}>
       <h2 className={styles.title}>สาขาความเชี่ยวชาญ</h2>
+      
+      {/* ตารางแสดงสาขาความเชี่ยวชาญ */}
       <div className={styles.expertiseGrid}>
         {expertiseData.map((item) => (
           <div key={item.id} className={styles.card}>
+            {/* รูปภาพประกอบสาขา */}
             <div className={styles.imageBox}>
               <img src={item.image} alt={item.title} className={styles.image} />
             </div>
+            {/* รายละเอียดภายในการ์ด */}
             <div className={styles.cardBody}>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDesc}>{item.description}</p>

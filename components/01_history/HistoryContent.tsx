@@ -2,6 +2,9 @@
 
 import styles from "./History.module.css";
 
+/**
+ * ข้อมูลเหตุการณ์สำคัญในประวัติของวิทยาลัย (Timeline Data)
+ */
 const historyData = [
   {
     year: "พ.ศ. 2537",
@@ -46,9 +49,14 @@ const historyData = [
   },
 ];
 
+/**
+ * ส่วนแสดงเนื้อหาประวัติความเป็นมา (History Content)
+ * แสดงในรูปแบบ Timeline ของเหตุการณ์สำคัญต่างๆ
+ */
 export default function HistoryContent() {
   return (
     <>
+      {/* หัวข้อและคำอธิบายเบื้องต้น */}
       <h1 className={styles.contentTitle}>
         "เพราะความปลอดภัยของผู้บริโภค คือหัวใจสำคัญของผู้"
       </h1>
@@ -59,16 +67,17 @@ export default function HistoryContent() {
         เพื่อเฝ้าระวังและป้องกันภัยสุขภาพในทุกมิติ สอดรับกับสถานการณ์โลกที่เปลี่ยนแปลงไปอย่างไม่หยุดยั้ง
       </p>
 
+      {/* ส่วนแสดง Timeline เหตุการณ์สำคัญ */}
       <div className={styles.timeline}>
         {historyData.map((item, index) => (
           <div key={index} className={styles.timelineItem}>
-            {/* Timeline Label with Gradient */}
+            {/* แถบสีแสดงปีและชื่อช่วงเวลา (Label) */}
             <div className={styles.timeLabel}>
               <span className={styles.year}>{item.year}</span>
               <span className={styles.subtitleLabel}>{item.subtitle}</span>
             </div>
 
-            {/* Content Details */}
+            {/* รายละเอียดเหตุการณ์ (Content Details) */}
             <div className={styles.details}>
               <h3 className={styles.milestoneHeader}>{item.title}</h3>
               {item.details.map((detail, idx) => (

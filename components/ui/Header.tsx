@@ -1,10 +1,15 @@
 import styles from "./Header.module.css";
 
+/**
+ * ส่วนหัวของเว็บไซต์ (Header)
+ * แสดงแถบสีเขียวด้านบนสุดพร้อมโลโก้และชื่อวิทยาลัย
+ */
 export default function Header() {
   return (
     <header className={styles.header}>
-      {/* Top Banner (Green) */}
+      {/* ส่วนแถบด้านบน (Top Banner) */}
       <div className={styles.topBanner}>
+        {/* พื้นที่แสดงโลโก้และชื่อองค์กร (Branding Area) */}
         <div className={styles.brandArea}>
           <img
             src="/images/icon.png"

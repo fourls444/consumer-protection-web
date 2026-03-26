@@ -1,0 +1,142 @@
+/* ส่วนคอนเทนเนอร์หลักสำหรับหน้าตราสัญลักษณ์ */
+.section {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ===================== GRID LAYOUT ===================== */
+.topRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: space-between;
+}
+.rightColumn > .infoCard {
+    flex: 1;
+}
+
+.bottomRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+/* ===================== EMBLEM CARD ===================== */
+.emblemCard {
+    background: linear-gradient(
+        135deg, 
+        #FFFFFF 0%,
+        #F6F8ED 30%,
+        #EAEED7 70%,
+        #E1E6CD 100%
+    );
+    border-radius: 16px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(255,255,255,0.6);
+}
+
+.emblemTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.emblemImage {
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+.quoteIcon {
+    font-size: 64px;
+    color: #cdd4b1;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.emblemTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+
+.emblemDesc {
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===================== INFO CARD ===================== */
+.infoCard {
+    background: #F7F7F7;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.infoIcon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.infoTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px 0;
+    line-height: 1.4;
+}
+
+.infoDesc {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+    .topRow, .bottomRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .emblemImage {
+        width: 90px;
+    }
+    .quoteIcon {
+        font-size: 48px;
+    }
+    .emblemCard {
+        padding: 24px;
+    }
+    .infoCard {
+        padding: 20px;
+    }
+}

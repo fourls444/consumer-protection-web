@@ -4,6 +4,9 @@ import Image from "next/image";
 import { HiOutlineAcademicCap, HiOutlineLightningBolt, HiOutlineShieldCheck, HiOutlineGlobeAlt } from "react-icons/hi";
 import styles from "./Vision.module.css";
 
+/**
+ * ข้อมูลการ์ดพันธกิจและวิสัยทัศน์ (Vision & Mission Cards)
+ */
 const visionCards = [
   {
     icon: <HiOutlineAcademicCap />,
@@ -31,16 +34,22 @@ const visionCards = [
   },
 ];
 
+/**
+ * ส่วนแสดงวิสัยทัศน์และพันธกิจ (Vision Content)
+ */
 export default function VisionContent() {
   return (
     <div className={styles.vision}>
+      {/* พาดหัววิสัยทัศน์ */}
       <h2 className={styles.visionHeader}>
         “มุ่งยกระดับร้านยาคุณภาพสู่มาตรฐานสากล ผ่านการพัฒนาเกณฑ์การรันรองสถานประกอบการ เสริมศักยภาพเภสัชกร และสร้างความเชื่อมั่นให้ประชาชน”
       </h2>
 
+      {/* รายการการ์ดพันธกิจ */}
       <div className={styles.cardList}>
         {visionCards.map((card, index) => (
           <div key={index} className={styles.card}>
+            {/* เนื้อหาภายในการ์ด (Icon, Title, Description) */}
             <div className={styles.cardContent}>
               <div className={styles.iconWrapper}>
                 {card.icon}
@@ -48,6 +57,8 @@ export default function VisionContent() {
               <h3 className={styles.cardTitle}>{card.title}</h3>
               <p className={styles.cardDesc}>{card.description}</p>
             </div>
+            
+            {/* รูปภาพประกอบการ์ด */}
             <div className={styles.cardImageWrapper}>
               <img 
                 src={card.image} 
