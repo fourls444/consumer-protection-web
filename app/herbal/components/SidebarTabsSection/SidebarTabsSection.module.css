@@ -10,7 +10,9 @@
 .historyMenu {
     width: 280px;
     flex-shrink: 0;
-    
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
 }
 
 .historyMenu h3 {
@@ -193,6 +195,8 @@
     .historyMenu {
         width: 100%;
         margin-bottom: 10px;
+        position: static;
+        align-self: auto;
     }
 
     .historyMenu h3 {
