@@ -3,11 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineLocationMarker, HiOutlineCalendar, HiOutlineUsers, HiOutlineBookmark, HiChevronRight } from "react-icons/hi";
+import { FaGraduationCap } from "react-icons/fa6";
 import styles from "./MeetingSection.module.css";
 
-/**
- * ข้อมูลรายการการประชุม
- */
+// รายการข้อมูลวาระการประชุม (จำลอง)
 const meetingList = [
   {
     day: "2",
@@ -16,6 +15,7 @@ const meetingList = [
     location: "ห้อง Sapphire 204-206 ศูนย์การประชุม อิมแพ็ค ฟอรั่ม เมืองทองธานี จังหวัดนนทบุรี",
     date: "วันที่จัดประชุม : 02 พ.ค. 2569 - 13 ก.ย. 2569",
     attendees: "100 คน",
+    cpe: "12.0",
     tags: [
       { name: "บุคคลทั่วไป", active: false },
       { name: "เภสัชกร", active: true },
@@ -30,6 +30,7 @@ const meetingList = [
     location: "ห้อง Sapphire 204-206 ศูนย์การประชุม อิมแพ็ค ฟอรั่ม เมืองทองธานี จังหวัดนนทบุรี",
     date: "วันที่จัดประชุม : 02 พ.ค. 2569 - 13 ก.ย. 2569",
     attendees: "100 คน",
+    cpe: "8.5",
     tags: [
       { name: "เภสัชกร", active: true },
     ],
@@ -39,10 +40,11 @@ const meetingList = [
   {
     day: "13",
     month: "ก.พ.",
-    title: "การฝึกอบรม ประกาศนียาวุโสวิชาชีพเภสัชกรรม (สาขาเภสัชกรรมคลินิก) รุ่นที่ 5",
+    title: "การฝึกอบรม ประกาศนียบัตรวิชาชีพเภสัชกรรม (สาขาเภสัชกรรมคลินิก) รุ่นที่ 5",
     location: "ห้อง Sapphire 204-206 ศูนย์การประชุม อิมแพ็ค ฟอรั่ม เมืองทองธานี จังหวัดนนทบุรี",
     date: "วันที่จัดประชุม : 02 พ.ค. 2569 - 13 ก.ย. 2569",
     attendees: "100 คน",
+    cpe: "10.0",
     tags: [
       { name: "บุคคลทั่วไป", active: false },
     ],
@@ -52,12 +54,12 @@ const meetingList = [
 ];
 
 /**
- * ส่วนแสดงรายการการประชุม (Meeting Section)
+ * ส่วนแสดงรายการวาระการประชุม (Meetings & Events)
  */
 export default function MeetingSection() {
   return (
     <section className={styles.meeting}>
-      {/* ส่วนหัวข้อการประชุมและลิงก์ดูทั้งหมด */}
+      {/* ส่วนหัวของ Section */}
       <header className={styles.header}>
         <h2 className={styles.title}>
           การประชุมวิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ
@@ -67,39 +69,47 @@ export default function MeetingSection() {
         </Link>
       </header>
 
-      {/* รายการการประชุม */}
+      {/* รายการวาระการประชุม */}
       <div className={styles.list}>
         {meetingList.map((meeting, index) => (
           <div key={index} className={styles.item}>
-            {/* กล่องแสดงวันที่ (Day & Month) */}
+            {/* ส่วนแสดงวันที่ (ฝั่งซ้าย) */}
             <div className={styles.date}>
               <span className={styles.day}>{meeting.day}</span>
               <span className={styles.month}>{meeting.month}</span>
             </div>
 
-            {/* เนื้อหารายละเอียดการประชุม */}
+            {/* ส่วนแสดงรายละเอียดเนื้อหา (กลาง) */}
             <div className={styles.content}>
-              <h3 className={styles.meetingTitle}>{meeting.title}</h3>
+              <div className={styles.titleWrapper}>
+                <h3 className={styles.meetingTitle}>{meeting.title}</h3>
+                {/* ป้ายกำกับคะแนน CPE (ถ้ามี) */}
+                {meeting.cpe && (
+                  <div className={styles.cpeBadge}>
+                    <FaGraduationCap className={styles.cpeIcon} />
+                    <span>CPE {meeting.cpe} หน่วยกิต</span>
+                  </div>
+                )}
+              </div>
+
+              {/* รายละเอียดเพิ่มเติม: สถานที่, วันที่, แท็กกลุ่มเป้าหมาย */}
               <div className={styles.details}>
-                {/* สถานที่ */}
                 <div className={styles.detailRow}>
                   <HiOutlineLocationMarker className={styles.icon} />
                   <span>{meeting.location}</span>
                 </div>
-                {/* วันที่จัดงาน */}
                 <div className={styles.detailRow}>
                   <HiOutlineCalendar className={styles.icon} />
                   <span>{meeting.date}</span>
                 </div>
-                {/* กลุ่มเป้าหมายและจำนวน */}
                 <div className={styles.tagContainer}>
                   <div className={styles.detailRow}>
                     <HiOutlineUsers className={styles.icon} />
                     <span>ผู้เข้าร่วม :</span>
                   </div>
                   {meeting.tags.map((tag, tagIdx) => (
-                    <span 
-                      key={tagIdx} 
+                    <span
+                      key={tagIdx}
                       className={`${styles.tag} ${tag.active ? styles.tagActive : ""}`}
                     >
                       {tag.name}
@@ -109,7 +119,6 @@ export default function MeetingSection() {
                     จำนวน : {meeting.attendees}
                   </span>
                 </div>
-                {/* หมวดหมู่ */}
                 <div className={styles.detailRow}>
                   <HiOutlineBookmark className={styles.icon} />
                   <span>หมวดหมู่ : {meeting.category}</span>
@@ -117,11 +126,13 @@ export default function MeetingSection() {
               </div>
             </div>
 
-            {/* รูปภาพประกอบการประชุม */}
+            {/* ส่วนแสดงรูปภาพประกอบ (ขวา) */}
             <div className={styles.imageWrapper}>
-              <img 
-                src={meeting.image} 
-                alt={meeting.title} 
+              <Image
+                src={meeting.image}
+                alt={meeting.title}
+                width={340}
+                height={200}
                 className={styles.image}
               />
             </div>
@@ -131,3 +142,4 @@ export default function MeetingSection() {
     </section>
   );
 }
+

@@ -17,8 +17,8 @@ const ibmPlexSansThai = IBM_Plex_Sans_Thai({
  * Metadata หลักสำหรับ SEO ของเว็บไซต์
  */
 export const metadata = {
-  title: "วิทยาลัยการคุ้มครองผู้บริโภคด้านยา",
-  description: "The College of Pharmaceutical and Health Consumer Protection",
+  title: "วิทยาลัยการคุ้มครองผู้บริโภคด้านยาฯ",
+  description: "The College of Pharmaceutical and Health Consumer Protection of Thailand (CPHCP)",
 };
 
 /**
@@ -35,12 +35,12 @@ export default function RootLayout({
       <body className="antialiased">
         {/* ส่วนหัวเว็บไซต์ (Navbar/Menu) */}
         <Header />
-        
+
         {/* พื้นที่แสดงเนื้อหาหลักของแต่ละหน้า */}
         <main style={{ minHeight: '60vh' }}>
           {children}
         </main>
-        
+
         {/* ส่วนท้ายเว็บไซต์ (Copyright/Links) */}
         <Footer />
       </body>
