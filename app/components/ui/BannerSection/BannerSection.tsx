@@ -8,8 +8,8 @@ export default function BannerSection() {
                     <img src="/images/favicon.png" alt="Royal College Logo" className={styles.logo} />
                 </div>
                 <div className={styles.textContent}>
-                    <h1 className={styles.titleTh}>วิทยาลัยเภสัชกรรมสมุนไพร</h1>
-                    <h2 className={styles.titleEn}>College of Herbal Pharmacy of Thailand</h2>
+                    <h1 className={styles.titleTh}>วิทยาลัยคุ้มครองผู้บริโภคด้านยาและสุขภาพ</h1>
+                    <h2 className={styles.titleEn}>College of Pharmacy and Health Consumer Protection</h2>
                 </div>
             </div>
         </section>
