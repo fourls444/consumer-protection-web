@@ -17,6 +17,12 @@
     gap: 24px;
 }
 
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .card {
     background: #ffffff;
     border-radius: 12px;

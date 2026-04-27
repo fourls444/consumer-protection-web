@@ -490,8 +490,42 @@
     font-weight: 700;
 }
 
-/* ===================== DOWNLOAD BUTTON ===================== */
-.downloadBtn {
+/* ===================== BUTTON & LINK STYLES ===================== */
+.cardContentLink {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip styles */
+.cardContentLink::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.cardContentLink:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.downloadBtnFull {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -500,7 +534,6 @@
     padding: 14px 20px;
     border: none;
     border-top: 1px solid #e8e8dc;
-    border-radius: 0 0 16px 16px;
     background: transparent;
     color: #555;
     font-size: 15px;
@@ -508,23 +541,18 @@
     cursor: pointer;
     transition: all 0.25s ease;
     margin-top: auto;
+    position: relative;
+    z-index: 2; /* Ensure it stays above link area if any overlap */
 }
 
-.downloadBtn:hover {
+.downloadBtnFull:hover {
     background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
     border-top-color: transparent;
     color: #fff;
 }
 
 .courseCard:hover .cardHeader {
-    background: linear-gradient(to right,#f0f0d8 0%, #FFFFFF 80%);
-   
-}
-
-.courseCard:hover .downloadBtn {
-    background: linear-gradient(to right, #8a8a3a 0%, #a0a050 100%);
-    border-top-color: transparent;
-    color: #fff;
+    background: linear-gradient(to right, #f0f0d8 0%, #FFFFFF 80%);
 }
 
 
