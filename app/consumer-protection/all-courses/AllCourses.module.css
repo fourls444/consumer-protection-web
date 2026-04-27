@@ -1,0 +1,435 @@
+.pageContainer {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* --- Hero Section (Mirroring CourseDetail) --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5rem;
+}
+
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 2;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    color: white;
+}
+
+.backBtn {
+    position: absolute;
+    top: 2.5rem;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    color: #333;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: fit-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.backBtn:hover {
+    transform: translateY(-2px);
+    background: #f8f9fa;
+}
+
+.categoryTag {
+    background-color: #d4e137;
+    color: #4a5d23;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+}
+
+.heroSubtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* --- Layout --- */
+.mainLayout {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 4rem 8rem;
+}
+
+.contentArea {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* --- Controls Row --- */
+.controlsRow {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.searchWrapper {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2rem;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 1.05rem;
+    background: #fff;
+    outline: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.searchInput:focus {
+    border-color: #d4e137;
+    box-shadow: 0 4px 20px rgba(212, 225, 55, 0.15);
+}
+
+.filterTabs {
+    display: flex;
+    gap: 8px;
+    background: #f8fafc;
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid #edf2f7;
+}
+
+.tab {
+    padding: 10px 28px;
+    border: none;
+    background: transparent;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: #334155;
+}
+
+.activeTab {
+    background: white;
+    color: #333 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Cards Grid --- */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2.5rem;
+}
+
+.courseCard {
+    background: #fff;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible; /* Allow tooltips to show outside */
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    position: relative; /* Ensure relative for z-index */
+}
+
+.courseCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+    border-color: #d4e137;
+}
+
+.cardContentLink {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    position: relative;
+    flex: 1;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2.5rem;
+    border-bottom: 1px solid #f8fafc;
+    min-height: 140px;
+    border-radius: 24px 24px 0 0; /* Match parent radius */
+}
+
+.cardIcon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #72721B 0%, #A4A865 100%);
+    border-radius: 18px;
+    color: white;
+}
+
+.cardTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.cardSubTitle {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cardBody {
+    padding: 2.5rem;
+}
+
+.cardDesc {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin: 0 0 2rem 0;
+}
+
+.detailTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 1.25rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid #cbaf54;
+}
+
+.detailList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detailList li {
+    font-size: 0.95rem;
+    color: #718096;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.detailList li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #cbaf54;
+    font-weight: 800;
+}
+
+.downloadBtnFull {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    border-top: 1px solid #f1f5f9;
+    background: transparent;
+    color: #4a5568;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    border-radius: 0 0 24px 24px; /* Match parent radius */
+}
+
+.downloadBtnFull:hover {
+    background: linear-gradient(to right, #72721B 0%, #8e9544 100%);
+    color: #fff;
+    border-top-color: transparent;
+}
+
+/* Tooltip */
+.cardContentLink::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -15px; /* Move above the card */
+    right: 20px; /* Position to the right */
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cardContentLink:hover::after {
+    opacity: 1;
+    visibility: visible;
+    top: -25px; /* Slight lift animation */
+}
+
+/* No Results */
+.noResults {
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.noResultsImg {
+    margin-bottom: 2rem;
+    opacity: 0.3;
+}
+
+.noResults h3 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.noResults p {
+    color: #718096;
+    margin-bottom: 2.5rem;
+}
+
+.resetBtn {
+    background: #72721B;
+    color: #fff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resetBtn:hover {
+    background: #5e6328;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .mainLayout {
+        padding: 4rem 2rem;
+    }
+    .hero {
+        height: 420px;
+    }
+    .heroContent {
+        padding: 0 2rem;
+    }
+    .backBtn {
+        left: 2rem;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        height: auto;
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+    .title {
+        font-size: 2.2rem;
+    }
+    .filterTabs {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 16px;
+    }
+}

@@ -1,8 +1,10 @@
 "use client";
-import { useState, useMemo } from "react";
+
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import Sidebar, { MenuItem, TabId } from "./Sidebar";
 
-// นำเข้า Sections ต่างๆ จากโครงสร้างโฟลเดอร์ของคุณ
+// นำเข้า Sections ต่างๆ
 import HistorySection from "./Tabs/HistorySection/HistorySection";
 import VisionMissionSection from "./Tabs/VisionMissionSection/VisionMissionSection";
 import CoursesSection from "./Tabs/CoursesSection/CoursesSection";
@@ -13,7 +15,6 @@ import LocationSection from "./Tabs/LocationSection/LocationSection";
 
 import styles from "./SidebarTabsSection.module.css";
 
-// กำหนดข้อมูลเมนูโดยใช้ String ID แทน Index (ตัวเลข)
 const MENU_ITEMS: MenuItem[] = [
     { id: "history", label: "ประวัติความเป็นมา" },
     { id: "vision", label: "วิสัยทัศน์และพันธกิจ" },
@@ -25,10 +26,24 @@ const MENU_ITEMS: MenuItem[] = [
 ];
 
 export default function SidebarTabsSection() {
-    // ใช้ String ID ('history') เป็นค่าเริ่มต้นแทนตัวเลข 0
+    const searchParams = useSearchParams();
+    const router = useRouter();
     const [activeTab, setActiveTab] = useState<TabId>("history");
 
-    // ใช้ Object Mapping จับคู่ ID กับ Component (คลีนกว่า if-else หรือ &&)
+    // Sync state with URL params
+    useEffect(() => {
+        const tab = searchParams.get("tab") as TabId;
+        if (tab && MENU_ITEMS.some(item => item.id === tab)) {
+            setActiveTab(tab);
+        }
+    }, [searchParams]);
+
+    const handleTabChange = (id: TabId) => {
+        setActiveTab(id);
+        // Update URL so that "Back" navigation returns to the correct tab
+        router.push(`?tab=${id}`, { scroll: false });
+    };
+
     const tabContent: Record<TabId, React.ReactNode> = useMemo(() => ({
         history: <HistorySection />,
         vision: <VisionMissionSection />,
@@ -40,20 +55,15 @@ export default function SidebarTabsSection() {
     }), []);
 
     return (
-        <section className={styles.historySection}>
-            
-            {/* LEFT MENU: เรียกใช้ Component ที่แยกไว้ */}
+        <section id="sidebar-tabs-section" className={styles.historySection}>
             <Sidebar 
                 menuItems={MENU_ITEMS} 
                 activeTab={activeTab} 
-                onTabChange={setActiveTab} 
+                onTabChange={handleTabChange} 
             />
-
-            {/* RIGHT CONTENT: ดึง Component ออกมาแสดงผลตาม ID ตรงๆ */}
             <div className={styles.historyContent}>
                 {tabContent[activeTab]}
             </div>
-
         </section>
     );
 }

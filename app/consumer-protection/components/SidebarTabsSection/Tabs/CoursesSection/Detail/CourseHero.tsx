@@ -2,8 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 import styles from "../CourseDetail.module.css";
 
 interface CourseHeroProps {
@@ -15,6 +15,7 @@ interface CourseHeroProps {
 }
 
 export default function CourseHero({ bannerSrc, badge, title, profilePic, profileText }: CourseHeroProps) {
+  const router = useRouter();
   return (
     <section className={styles.hero}>
       <div className={styles.heroBackground}>
@@ -28,11 +29,9 @@ export default function CourseHero({ bannerSrc, badge, title, profilePic, profil
         <div className={styles.heroOverlay}></div>
       </div>
 
-      <Link href="/consumer-protection">
-        <button className={styles.backBtn}>
-          <FaArrowLeft size={14} /> กลับหน้าหลัก
-        </button>
-      </Link>
+      <button className={styles.backBtn} onClick={() => router.back()}>
+        <FaArrowLeft size={14} /> ย้อนกลับ
+      </button>
 
       <div className={styles.heroContent}>
         <div className={styles.categoryTag}>{badge}</div>

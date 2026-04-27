@@ -81,7 +81,9 @@ export default function CoursesSection() {
             <div className={styles.rowHeader}>
                 <h2 className={styles.rowTitle}>หลักสูตรระยะสั้น</h2>
 
-                <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+                <Link href="/consumer-protection/all-courses?cat=short">
+                    <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+                </Link>
 
             </div>
 
@@ -192,7 +194,9 @@ export default function CoursesSection() {
             <div className={styles.rowHeader}>
                 <h2 className={styles.rowTitle}>หลักสูตรระยะกลาง</h2>
 
-                <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+                <Link href="/consumer-protection/all-courses?cat=middle">
+                    <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+                </Link>
 
             </div>
 
@@ -304,7 +308,9 @@ export default function CoursesSection() {
             <div className={styles.rowHeader}>
                 <h2 className={styles.rowTitle}>หลักสูตรระยะยาว</h2>
 
-                <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+                <Link href="/consumer-protection/all-courses?cat=long">
+                    <button className={styles.viewAllBtn}>ดูทั้งหมด <FaChevronRight style={{ fontSize: '10px', marginLeft: '4px' }} /></button>
+                </Link>
 
             </div>
 

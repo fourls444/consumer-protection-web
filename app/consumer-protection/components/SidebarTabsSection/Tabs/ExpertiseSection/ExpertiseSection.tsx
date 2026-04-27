@@ -17,7 +17,11 @@ export default function ExpertiseSection() {
             <h2 className={styles.mainHeading}>สาขาความเชี่ยวชาญ</h2>
             <div className={styles.cardGrid}>
                 {EXPERTISE_DATA.map((item) => (
-                    <Link key={item.id} href={`/consumer-protection/expertise/${item.id}`} className={styles.cardLink}>
+                    <Link 
+                        key={item.id} 
+                        href={`/consumer-protection/expertise/${item.id}`} 
+                        className={styles.cardLink}
+                    >
                         <div className={styles.card}>
                             <div className={styles.cardImageWrapper}>
                                 <Image
@@ -27,6 +31,9 @@ export default function ExpertiseSection() {
                                     height={192}
                                     className={styles.cardImage}
                                 />
+                                <div className={styles.overlay}>
+                                    <span className={styles.overlayBtn}>ดูรายละเอียด</span>
+                                </div>
                             </div>
                             <div className={styles.cardContent}>
                                 <h3 className={styles.cardTitle}>{item.title}</h3>

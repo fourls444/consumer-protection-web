@@ -375,6 +375,7 @@
     border-bottom: 1px solid #e8e8dc;
     transition: background 0.25s ease, border-color 0.25s ease;
     min-height: 120px;
+    border-radius: 16px 16px 0 0; /* Match parent radius */
 }
 
 .cardDesc {
@@ -415,7 +416,7 @@
     display: flex;
     flex-direction: column;
     transition: box-shadow 0.25s ease, transform 0.25s ease;
-    overflow: hidden;
+    overflow: visible; /* Allow tooltips to show outside */
     background: #fff;
 }
 
@@ -503,26 +504,26 @@
 .cardContentLink::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.75);
+    top: -15px; /* Move above the card */
+    right: 20px; /* Position to the right */
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
     font-size: 11px;
     font-weight: 500;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(5px);
-    transition: all 0.2s ease;
-    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .cardContentLink:hover::after {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    top: -25px; /* Slight lift animation */
 }
 
 .downloadBtnFull {
@@ -542,7 +543,8 @@
     transition: all 0.25s ease;
     margin-top: auto;
     position: relative;
-    z-index: 2; /* Ensure it stays above link area if any overlap */
+    z-index: 2; 
+    border-radius: 0 0 16px 16px; /* Match parent radius */
 }
 
 .downloadBtnFull:hover {

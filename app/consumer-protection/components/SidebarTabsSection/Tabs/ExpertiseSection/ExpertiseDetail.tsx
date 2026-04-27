@@ -94,15 +94,15 @@ export default function ExpertiseDetail() {
 
   return (
     <div className={styles.detailContainer}>
-      <ExpertiseHero 
+      <ExpertiseHero
         bannerSrc="/images/expertise/card1.jpg"
-        badge="วิทยาลัยเภสัชกรรมชุมชน"
+        badge="สภาเภสัชกรรม"
         title="สาขา 1"
         subtitle="หลักสูตรเภสัชศาสตรบัณฑิต"
       />
 
       <main className={styles.mainLayout}>
-        <ExpertiseContent 
+        <ExpertiseContent
           description="สาขาเภสัชกรรมคลินิกมุ่งเน้นการพัฒนาความรู้และทักษะในการดูแลผู้ป่วยในโรงพยาบาล การประเมินความเหมาะสมของการใช้ยา การติดตามและป้องกันผลข้างเคียงจากยา และการทำงานร่วมกับทีมสหวิชาชีพเพื่อให้ผู้ป่วยได้รับการรักษาที่ดีที่สุด"
           objectives={objectives}
           curriculumData={curriculumData}
@@ -115,7 +115,7 @@ export default function ExpertiseDetail() {
           ]}
           careers={careers}
         />
-        <ExpertiseSidebar 
+        <ExpertiseSidebar
           infoItems={infoItems}
           highlights={highlights}
         />
