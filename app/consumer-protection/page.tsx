@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import HeroSection from "../components/ui/BannerSection/BannerSection";
 import AboutSection from "./components/AboutSection/AboutSection";
 import SidebarTabsSection from "./components/SidebarTabsSection/SidebarTabsSection";
@@ -12,10 +13,12 @@ export default function RoyalCollegePage() {
             
             <HeroSection />
             <AboutSection />
-            <SidebarTabsSection />
+            <Suspense fallback={<div>Loading...</div>}>
+                <SidebarTabsSection />
+            </Suspense>
             <CollegesSection />
             <MeetingsSection />
             <NewsSection />
         </div>
     );
-}
+}

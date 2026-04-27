@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -85,7 +85,7 @@ const COURSES_DATA = [
   }
 ];
 
-export default function AllCoursesPage() {
+function AllCoursesContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
@@ -224,3 +224,12 @@ export default function AllCoursesPage() {
     </div>
   );
 }
+
+export default function AllCoursesPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AllCoursesContent />
+    </Suspense>
+  );
+}
+
